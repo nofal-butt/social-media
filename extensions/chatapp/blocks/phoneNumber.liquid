@@ -1,0 +1,242 @@
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
+
+
+<script> 
+      document.addEventListener('DOMContentLoaded', function() {
+        let metafields = {{ shop.metafields.chatapp.phone }}
+        console.log(metafields)
+     
+
+         const toggles = Object.values(metafields).reduce((arr, value) => {
+          arr.push(value)
+          return arr;
+       }, []);
+
+
+
+
+  console.log(toggles);
+  console.log(toggles[1].what_Numtoggle)
+  console.log(toggles[5].skypetoggle)
+
+        if(toggles[0].phoneNumtoggle==true){
+          const element = document.getElementById("myElement4");
+          element.style.display = "block";}
+
+       if(toggles[1].what_Numtoggle==true){
+          const element = document.getElementById("myElement");
+          element.style.display = "block";}
+
+        if(toggles[2].messangertoggle==true){
+          const element = document.getElementById("myElement1");
+          element.style.display = "block"}
+
+        if(toggles[3].instagramtoggle==true){
+          const element = document.getElementById("myElement2");
+          element.style.display = "block";}
+
+        if(toggles[4].emailtoggle==true){
+          const element = document.getElementById("myElement3");
+          element.style.display = "block";}
+
+        if(toggles[5].skypetoggle==true){
+          const element = document.getElementById("myElement5");
+          element.style.display = "block";}
+
+        if(toggles[6].telegramtoggle==true){
+          const element = document.getElementById("myElement6");
+          element.style.display = "block";}
+
+
+// WhatsApp
+      const whatsappLink = `https://wa.me/${metafields.Whatsapp.what_Num}`;
+      const whatsappAnchor = document.getElementById("whatsappLink");
+      whatsappAnchor.href = whatsappLink;
+      whatsappAnchor.addEventListener("click", openWhatsapp);
+
+      // Messenger
+      const messangerLink = `https://m.me/${metafields.Messanger.messanger}`;
+      const messangerAnchor = document.getElementById("messangerLink");
+      messangerAnchor.href = messangerLink;
+      messangerAnchor.addEventListener("click", openMessanger);
+
+      // Email
+      const emailLink = `mailto:${metafields.Email.email}`;
+      const emailAnchor = document.getElementById("emailLink");
+      emailAnchor.href = emailLink;
+      emailAnchor.addEventListener("click", openEmail);
+
+      // Instagram
+      const instaLink = `https://www.instagram.com/${metafields.Instagram.instagram}`;
+      const instaAnchor = document.getElementById("instaLink");
+      instaAnchor.href = instaLink;
+      instaAnchor.addEventListener("click", openInsta);
+
+      // Phone
+      const phoneLink = `tel:${metafields.Phone.phoneNum}`;
+      const phoneAnchor = document.getElementById("phoneLink");
+      phoneAnchor.href = phoneLink;
+      phoneAnchor.addEventListener("click", openPhone);
+
+      // Skype
+      const skypeLink = `skype:${metafields.Skype.skype}?chat`;
+      const skypeAnchor = document.getElementById("skypeLink");
+      skypeAnchor.href = skypeLink;
+      skypeAnchor.addEventListener("click", openSkype);
+
+      // Telegram
+      const telegramLink = `https://t.me/${metafields.Telegram.telegram}`;
+      const telegramAnchor = document.getElementById("telegramLink");
+      telegramAnchor.href = telegramLink;
+      telegramAnchor.addEventListener("click", openTelegram);
+
+      function openWhatsapp(event) {
+        event.preventDefault();
+        window.open(whatsappLink, "_blank");
+      }
+
+      function openMessanger(event) {
+        event.preventDefault();
+        window.open(messangerLink, "_blank");
+      }
+
+      function openEmail(event) {
+        event.preventDefault();
+        window.open(emailLink, "_blank");
+      }
+
+      function openInsta(event) {
+        event.preventDefault();
+        window.open(instaLink, "_blank");
+      }
+
+      function openPhone(event) {
+        event.preventDefault();
+        window.open(phoneLink, "_blank");
+      }
+
+      function openSkype(event) {
+        event.preventDefault();
+        window.open(skypeLink, "_blank");
+      }
+
+      function openTelegram(event) {
+        event.preventDefault();
+        window.open(telegramLink, "_blank");
+      }
+    });
+
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+
+</script>
+
+<div class="popup" onclick="myFunction()">
+  <i class="fa-solid fa-message"></i>
+  <div class="wrapper" id="myPopup">
+
+     <div  class="Button1" id="myElement">
+        <a id="whatsappLink" target="_blank">
+          <div class="icon  whatsapp-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+        </a>
+          <div>
+            <div class="text">WhatsApp</div>
+            <div class="lable"> {{ block.settings.Whatsapp }}</div>
+        </div>
+    </div>
+
+      <div class="Button1" id="myElement1">
+       <div class="icon messanger-icon" >
+          <a id="messangerLink" target="_blank">
+            <i class="fa-brands fa-facebook-messenger"></i>
+          </a>
+          </div>
+        <div>
+            <div class="text">Messanger</div>
+            <div class="lable"> {{ block.settings.Messanger }}</div>
+        </div>
+      </div>
+      <div class="Button1" id="myElement2">
+       <div class="icon insta-icon">
+          <a id="instaLink" target="_blank">
+            <i class="fab fa-instagram instagram-icon"></i>
+          </a>
+       </div>
+          <div>
+            <div class="text">Instagram</div>
+            <div class="lable"> {{ block.settings.Instagram }}</div>
+        </div>
+     </div>
+      <div class="Button1" id="myElement3">
+       <div class="icon email-icon">
+          <a id="emailLink" target="_blank">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+       </div>
+         <div>
+            <div class="text">Email</div>
+            <div class="lable"> {{ block.settings.Email }}</div>
+         </div>
+      </div> 
+      <div class="Button1" id="myElement4">
+       <div class="icon phone-icon">
+          <a id="phoneLink" target="_blank">
+          <i class="fa-solid fa-phone"></i>
+          </a>
+       </div>
+          <div>
+            <div class="text">Phone</div>
+            <div class="lable"> {{ block.settings.Phone }}</div>
+         </div>
+      </div>
+      <div class="Button1" id="myElement5">
+       <div class="icon messanger-icon">
+          <a id="skypeLink" target="_blank">
+            <i class="fa-brands fa-skype"></i>
+          </a>
+        </div>
+          <div>
+            <div class="text">Skype</div>
+            <div class="lable"> {{ block.settings.Skype }}</div>
+        </div>
+     </div>
+      <div class="Button1" id="myElement6">
+        <div class="icon messanger-icon">
+            <a id="telegramLink" target="_blank">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+        </div>
+            <div>
+              <div class="text">Telegram</div>
+              <div class="lable"> {{ block.settings.Telegram }}</div>
+          </div>
+      </div>
+  </div>
+ 
+</div>
+
+
+
+
+</head>
+    {% schema %}
+    {
+      "name": "Call App",
+      "target": "head",
+      "settings": [ 
+      {"type": "text","id": "Whatsapp", "label": "Whatsapp Sub Heading","default": " Sales department "},
+      {"type": "text","id": "Messanger", "label": "Messanger Sub Heading","default": "Contact on facebook "},
+      {"type": "text","id": "Instagram", "label": "Instagram Sub Heading","default": "Contact on Instagram "},
+      {"type": "text","id": "Email", "label": "Email Sub Heading","default": " Send an Email directly"},
+      {"type": "text","id": "Phone", "label": "Phone Sub Heading","default": " Request a call"},
+      {"type": "text","id": "Skype", "label": "Skype Sub Heading","default": " Technical department "},
+      {"type": "text","id": "Telegram", "label": "Telegram Sub Heading","default": " Technical department"}
+ ]
+    }
+    {% endschema %}

@@ -1,0 +1,135 @@
+.Button1 {
+  /* display: flex !important; */
+  /* justify-content: space-around; */
+  text-decoration: none;
+  cursor: pointer;
+  bottom: 20%;
+  z-index: 100;
+  margin: 5px;
+  border-radius: 5px;
+  /* background-color: #999; */
+}
+
+.popup {
+  cursor: pointer;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  background-color: #15303b;
+  text-decoration: none;
+  border-radius: 100px;
+  text-align: center;
+  /* box-shadow: 2px 2px 3px #ddcfcf; */
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  line-height: 2;
+  font-size: 30px;
+}
+
+.wrapper {
+  visibility: hidden;
+  width: 300px;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  right: 5%;
+  text-decoration: none;
+  background-color: white;
+}
+.whatsapp-icon {
+  background-color: #25d366;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 1.7;
+}
+.messanger-icon {
+  background-color: #eeeeee;
+  color: #0099ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 1.7;
+}
+.insta-icon {
+  background-color: #e1306c;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 1.7;
+}
+.email-icon {
+  background-color: #c71610;
+  color: #c71610;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 1.7;
+}
+.phone-icon {
+  background-color: #1b96cf;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 1.7;
+}
+.icon {
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.text {
+  font-size: 2rem;
+  padding: 10px 75px 5px 10px;
+  line-height: 1.5px;
+  font-weight: 500;
+}
+.lable {
+  font-size: 1.5rem;
+  padding: 15px 12px 0px 1px;
+  line-height: 1.5px;
+}
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#myElement,
+#myElement1,
+#myElement2,
+#myElement3,
+#myElement4,
+#myElement5,
+#myElement6 {
+  display: none;
+}
+
+.myElement {
+  display: none;
+}
